@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Website</title>
+  </head>
+  <style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin: 0 10px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-toggle .hamburger {
+      width: 30px;
+      height: 2px;
+      background-color: black;
+      margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="path_to_your_logo.png" alt="Logo" />
+      </div>
+      <nav class="nav">
+        <div class="menu-toggle">
+          <div class="hamburger"></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#link1">Link 1</a></li>
+          <li><a href="#link2">Link 2</a></li>
+          <li><a href="#link3">Link 3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <p>This is a simple website.</p>
+    </main>
+    <footer>
+      <p>Copyright &copy; 2022</p>
+    </footer>
+  </body>
+</html>
