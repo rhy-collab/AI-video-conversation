@@ -29,7 +29,7 @@
 
     .nav-links a {
       text-decoration: none;
-      color: black;
+      color: rgb(192, 59, 59);
     }
 
     .menu-toggle {
@@ -39,13 +39,17 @@
     .menu-toggle .hamburger {
       width: 30px;
       height: 2px;
-      background-color: black;
+      background-color: rgb(70, 36, 164);
       margin: 5px 0;
     }
 
     @media (max-width: 768px) {
       .nav-links {
         display: none;
+      }
+
+      .nav-links.active {
+        display: block;
       }
 
       .menu-toggle {
@@ -62,19 +66,37 @@
       <nav class="nav">
         <div class="menu-toggle">
           <div class="hamburger"></div>
+          <li><a href="#link1">Contact</a></li>
+          <li><a href="#link2">Abouyt us</a></li>
+          <li><a href="#link3">Services</a></li>
         </div>
+
         <ul class="nav-links">
-          <li><a href="#link1">Link 1</a></li>
-          <li><a href="#link2">Link 2</a></li>
-          <li><a href="#link3">Link 3</a></li>
+          <li><a href="#link1">Contact</a></li>
+          <li><a href="#link2">About us</a></li>
+          <li><a href="#link3">Services</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <p>This is a simple website.</p>
+      <button>Click me</button>
     </main>
     <footer>
       <p>Copyright &copy; 2022</p>
     </footer>
+    <script>
+      // Select the hamburger menu
+      var menuToggle = document.querySelector(".menu-toggle");
+
+      // Add a click event listener
+      menuToggle.addEventListener("click", function () {
+        // Select the nav links
+        var navLinks = document.querySelector(".nav-links");
+
+        // Toggle the 'active' class
+        navLinks.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>

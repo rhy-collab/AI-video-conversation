@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Australia Oyster Coast</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      /* Hide the button by default */
+      button {
+        display: none;
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .bg-blue {
+        background-color: blue;
+      }
+      button:active {
+        background-color: rgb(255, 0, 195);
+      }
+
+      /* Styling the header */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      header h1 {
+        color: #333;
+      }
+
+      nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* Show the button on screens smaller than 600px */
+      @media (max-width: 600px) {
+        nav {
+          display: none;
+        }
+        button {
+          display: block;
+        }
+      }
+
+      a {
+        color: green; /* Replace 'green' with the color you want */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to My Website</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <button id="myButton" onclick="toggleLinks()">Click Me</button>
+      <div id="links" class="hidden">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </header>
+
+    <script>
+      function toggleLinks() {
+        var links = document.getElementById("links");
+        var button = document.getElementById("myButton");
+        links.classList.toggle("hidden");
+        button.classList.toggle("bg-blue");
+      }
+    </script>
+  </body>
+</html>
