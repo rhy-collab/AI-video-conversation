@@ -67,20 +67,34 @@
         <a href="#">About</a>
         <a href="#">Contact</a>
       </nav>
-      <button id="myButton" onclick="toggleLinks()">Click Me</button>
-      <div id="links" class="hidden">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+      <button id="myButton" onclick="toggleDropdown()">Click Me</button>
+
+      <!-- Dropdown HTML -->
+      <div id="dropdown" style="display: none">
+        <button onclick="handleLinkClick(1)" id="link1">Link 1</button>
+        <button onclick="handleLinkClick(2)" id="link2">Link 2</button>
+        <button onclick="handleLinkClick(3)" id="link3">Link 3</button>
       </div>
     </header>
 
     <script>
-      function toggleLinks() {
-        var links = document.getElementById("links");
-        var button = document.getElementById("myButton");
-        links.classList.toggle("hidden");
-        button.classList.toggle("bg-blue");
+      function toggleDropdown() {
+        var dropdown = document.getElementById("dropdown");
+        if (dropdown.style.display === "none") {
+          dropdown.style.display = "block";
+          document.getElementById("link1").style.color = "green";
+          document.getElementById("link2").style.color = "green";
+          document.getElementById("link3").style.color = "green";
+        } else {
+          dropdown.style.display = "none";
+          document.getElementById("link1").style.color = ""; // Reset to default color
+          document.getElementById("link2").style.color = ""; // Reset to default color
+          document.getElementById("link3").style.color = ""; // Reset to default color
+        }
+      }
+
+      function handleLinkClick(linkNumber) {
+        console.log("Link " + linkNumber + " clicked");
       }
     </script>
   </body>
